@@ -16,6 +16,7 @@ jobs:
         node: [18, 20]
     runs-on: ${{ matrix.os }}
     steps:
+      - run: echo "${{ toJson(github.event) }}"
       - name: Checkout
         uses: actions/checkout@v4
       - name: Set Node.js ${{ matrix.node }}
